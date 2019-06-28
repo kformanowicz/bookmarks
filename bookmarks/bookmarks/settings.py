@@ -26,7 +26,7 @@ SECRET_KEY = 'zh+xe2t0k99v+4u7s77&qy!gzby&fk*^&kiv%065o4^$icih43'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['my-page.com', '127.0.0.1', 'localhost']
 
 
 # Application definition
@@ -38,7 +38,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'account'
+    'account',
+    'social.apps.django_app.default'
 ]
 
 MIDDLEWARE = [
@@ -131,5 +132,10 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media/')
 
 AUTHENTICATION_BACKENDS = (
     'account.authentication.EmailAuthBackend',
-    'django.contrib.auth.backends.ModelBackend'
+    'django.contrib.auth.backends.ModelBackend',
+    'social.backends.facebook.FacebookOAuth2'
 )
+
+SOCIAL_AUTH_FACEBOOK_KEY = os.environ['BOOKMARKS_FACEBOOK_APP_ID']
+SOCIAL_AUTH_FACEBOOK_SECRET = os.environ['BOOKMARKS_FACEBOOK_SECRET']
+SOCIAL_AUTH_FACEBOOK_SCOPE = ['email']
