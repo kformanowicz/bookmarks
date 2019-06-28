@@ -39,7 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'account',
-    'social.apps.django_app.default'
+    'social_django'
 ]
 
 MIDDLEWARE = [
@@ -133,7 +133,7 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media/')
 AUTHENTICATION_BACKENDS = (
     'account.authentication.EmailAuthBackend',
     'django.contrib.auth.backends.ModelBackend',
-    'social.backends.facebook.FacebookOAuth2'
+    'social_core.backends.facebook.FacebookOAuth2'
 )
 
 SOCIAL_AUTH_FACEBOOK_KEY = os.environ['BOOKMARKS_FACEBOOK_APP_ID']
