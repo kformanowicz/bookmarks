@@ -134,7 +134,8 @@ AUTHENTICATION_BACKENDS = (
     'account.authentication.EmailAuthBackend',
     'django.contrib.auth.backends.ModelBackend',
     'social_core.backends.facebook.FacebookOAuth2',
-    'social_core.backends.twitter.TwitterOAuth'
+    'social_core.backends.twitter.TwitterOAuth',
+    'social_core.backends.google.GoogleOAuth2'
 )
 
 SOCIAL_AUTH_FACEBOOK_KEY = os.environ['BOOKMARKS_FACEBOOK_APP_ID']
@@ -142,3 +143,5 @@ SOCIAL_AUTH_FACEBOOK_SECRET = os.environ['BOOKMARKS_FACEBOOK_SECRET']
 SOCIAL_AUTH_FACEBOOK_SCOPE = ['email']
 SOCIAL_AUTH_TWITTER_KEY = os.environ['BOOKMARKS_TWITTER_KEY']
 SOCIAL_AUTH_TWITTER_SECRET = os.environ['BOOKMARKS_TWITTER_SECRET']
+SOCIAL_AUTH_GOOGLE_OAUTH2_KEY = os.environ['BOOKMARKS_GOOGLE_KEY']
+SOCIAL_AUTH_GOOGLE_OAUTH2_SECRET = os.environ['BOOKMARKS_GOOGLE_SECRET']
