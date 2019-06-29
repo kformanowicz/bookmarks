@@ -4,5 +4,10 @@
 
 {% block content %}
     <h1>Dashboard</h1>
-    <p>Welcome to your dashboard. You can <a href="{% url 'edit' %}">edit your profile</a> or <a href="{% url 'password_change' %}">change your password</a>.</p>
+    {% with total_images_created=request.user.images_created.count %}
+        <p>Welcome to your Dashboard. You added {{ total_images_created }} image{{ total_images_created|pluralize:"s" }}.</p>
+    {% endwith %}
+    <p>Drag the below button to your favorites bar. You will then be able to add images from other web pages.
+    <a href="javascript:{% include 'bookmarklet_launcher.js' %}" class="button">Add image</a></p>
+<p>You can <a href="{% url 'edit' %}">edit your profile</a> or <a href="{% url 'password_change' %}">change your password</a>.</p>
 {% endblock %}
