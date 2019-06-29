@@ -18,7 +18,7 @@ class ImageCreateForm(forms.ModelForm):
         valid_extensions = ['jpg', 'jpeg']
         extension = url.rsplit('.', 1)[1].lower()
         if extension not in valid_extensions:
-            raise forms.ValidationError('Given URL address does not contain image in supported format.')
+            raise forms.ValidationError('Given URL address does not contain images in supported format.')
         return url
 
     def save(self, force_insert=False, force_update=False, commit=True):
