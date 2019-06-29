@@ -133,9 +133,12 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media/')
 AUTHENTICATION_BACKENDS = (
     'account.authentication.EmailAuthBackend',
     'django.contrib.auth.backends.ModelBackend',
-    'social_core.backends.facebook.FacebookOAuth2'
+    'social_core.backends.facebook.FacebookOAuth2',
+    'social_core.backends.twitter.TwitterOAuth'
 )
 
 SOCIAL_AUTH_FACEBOOK_KEY = os.environ['BOOKMARKS_FACEBOOK_APP_ID']
 SOCIAL_AUTH_FACEBOOK_SECRET = os.environ['BOOKMARKS_FACEBOOK_SECRET']
 SOCIAL_AUTH_FACEBOOK_SCOPE = ['email']
+SOCIAL_AUTH_TWITTER_KEY = os.environ['BOOKMARKS_TWITTER_KEY']
+SOCIAL_AUTH_TWITTER_SECRET = os.environ['BOOKMARKS_TWITTER_SECRET']
