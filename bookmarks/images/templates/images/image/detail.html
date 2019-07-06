@@ -27,9 +27,11 @@
             {{ image.description|linebreaks }}
         </div>
         <div class="image-likes">
-            {% for user in image.user_likes.all %}
+            {% for user in image.users_like.all %}
                 <div>
-                    <img src="{{ user.profile.photo.url }}">
+                    {% if user.profile.photo %}
+                        <img src="{{ user.profile.photo.url }}">
+                    {% endif %}
                     <p>{{ user.first_name }}</p>
                 </div>
             {% empty %}
