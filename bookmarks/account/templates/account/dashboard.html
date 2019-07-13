@@ -9,5 +9,11 @@
     {% endwith %}
     <p>Drag the below button to your favorites bar. You will then be able to add images from other web pages.
     <a href="javascript:{% include 'bookmarklet_launcher.js' %}" class="button">Add image</a></p>
-<p>You can <a href="{% url 'edit' %}">edit your profile</a> or <a href="{% url 'password_change' %}">change your password</a>.</p>
+    <p>You can <a href="{% url 'edit' %}">edit your profile</a> or <a href="{% url 'password_change' %}">change your password</a>.</p>
+    <h2>What's new?</h2>
+    <div id="action-list">
+        {% for action in actions %}
+            {% include "actions/action/detail.html" %}
+        {% endfor %}
+    </div>
 {% endblock %}
