@@ -41,7 +41,8 @@ INSTALLED_APPS = [
     'account',
     'social_django',
     'images',
-    'sorl.thumbnail'
+    'sorl.thumbnail',
+    'actions',
 ]
 
 MIDDLEWARE = [
